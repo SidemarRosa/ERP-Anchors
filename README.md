@@ -1,7 +1,7 @@
 # Anchorstec - ERP
 
 ## Descrição do Projeto
-ERP desenvolvido para controle financeiro, vendas, e gestão de projetos da anchorstec
+ERP desenvolvido para controle financeiro, vendas, e gestão de projetos da anchorstec baseado no projeto de (https://www.creative-tim.com)
 
 ## Funcionalidades
 - Controle financeiro
