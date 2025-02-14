@@ -1,5 +1,5 @@
 <?php
-$route['default_controller'] = 'login'; // Login será a página inicial
+$route['default_controller'] = 'index'; // Login será a página inicial
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
