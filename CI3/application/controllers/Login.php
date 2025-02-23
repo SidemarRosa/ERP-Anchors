@@ -2,6 +2,15 @@
 
 class Login extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        date_default_timezone_set('America/Sao_Paulo');
+    }
     public function index()
     {
         // Verifique se o formulário foi enviado
@@ -18,6 +27,6 @@ class Login extends CI_Controller
         }
 
         // Carregar a view de login
-        $this->load->view('login');
+        $this->load->view('view_login');
     }
 }

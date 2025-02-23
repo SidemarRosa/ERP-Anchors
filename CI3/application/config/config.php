@@ -38,7 +38,7 @@ $config['base_url'] = 'http://localhost/anchors/CI3/index.php/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = ''; // Remove "index.php" da URL
+$config['index_page'] = 'login'; // Remove "index.php" da URL
 
 /*
 |--------------------------------------------------------------------------

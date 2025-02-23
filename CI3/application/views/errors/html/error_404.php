@@ -7,7 +7,7 @@
 		name="viewport"
 		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-	<link rel="icon" type="image/png" href="../assets/img/favicon-removebg-preview.png" />
+	<link rel="icon" type="image/png" href=".../assets/img/favicon-removebg-preview.png" />
 	<title>ERP | Anchorstec - Error 404</title>
 	<!--     Fonts and icons     -->
 	<link

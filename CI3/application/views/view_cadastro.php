@@ -24,13 +24,13 @@
 
 <body class="g-sidenav-show  bg-gray-100">
     <section class="min-vh-100 mb-8">
-        <div class="page-header align-items-start min-vh-75 pt-5 pb-11" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
-            <span class="mask bg-gradient-dark opacity-6"></span>
+        <div class="page-header align-items-start min-vh-75 pt-5 pb-11" style="background-image: url('../assets/img/curved-images/curved8.jpg');">
+            <span class="mask bg-gradient-dark opacity-3"></span>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 text-center mx-auto">
                         <h1 class="text-white mb-2 mt-5">Bem vindo!</h1>
-                        <p class="text-lead text-white">Faça seu cadastro para entrar no ERP abaixo com seu email ou rede-social.</p>
+                        <p class="text-lead text-white">Faça seu cadastro para acesso ao ERP</p>
                     </div>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                 <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                     <div class="card z-index-0">
                         <div class="card-header text-center pt-4">
-                            <h5>Registre-se com</h5>
+                            <h5>Registre-se</h5>
                         </div>
-                        <div class="row px-xl-5 px-sm-4 px-3">
+                        <!-- <div class="row px-xl-5 px-sm-4 px-3">
                             <div class="">
                                 <a class="btn btn-outline-light w-100" href="javascript:;">
                                     <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -62,11 +62,14 @@
                                     Ou
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="card-body">
                             <form role="form text-left">
                                 <div class="mb-3">
                                     <input type="text" class="form-control" placeholder="Nome" aria-label="Name" aria-describedby="email-addon">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="documento" class="form-control" placeholder="CNPJ ou CPF" aria-label="documento" aria-describedby="documento-addon">
                                 </div>
                                 <div class="mb-3">
                                     <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
@@ -77,14 +80,17 @@
                                 <div class="mb-3">
                                     <input type="password" class="form-control" placeholder="Confirme sua Senha" aria-label="Password" aria-describedby="password-addon">
                                 </div>
-                                <div class="form-check form-check-info text-left">
+                                <div class="mb-3">
+                                    <input type="documento" class="form-control" placeholder="Confirme sua Senha" aria-label="documento" aria-describedby="documento-addon">
+                                </div>
+                                <!-- <div class="form-check form-check-info text-left">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Concordo com os <a href="javascript:;" class="text-dark font-weight-bolder">Termos e condições</a>
                                     </label>
-                                </div>
-                                <div class="text-center color-white">
-                                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2"> <a href="http://localhost/anchors/CI3/index.php/login">Registrar</a></button>
+                                </div> -->
+                                <div class="">
+                                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2 text-center color-white > <a href=" http://localhost/anchors/CI3/index.php/login">Registrar</a></button>
                                 </div>
                                 <p class="text-sm mt-3 mb-0">Já tem uma conta? <a href="http://localhost/anchors/CI3/index.php/login" class="text-dark font-weight-bolder">Faça login</a></p>
                             </form>
