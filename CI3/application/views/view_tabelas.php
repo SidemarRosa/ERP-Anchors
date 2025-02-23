@@ -48,7 +48,7 @@
       id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="http://localhost/anchors/CI3/index.php/dashboard"">
+          <a class="nav-link" href="http://localhost/anchors/CI3/index.php/dashboard"">
             <div
               class=" icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg
@@ -88,7 +88,7 @@
 
     <!-- Icone tabela -->
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/anchors/CI3/index.php/tabelas">
+      <a class="nav-link active" href="http://localhost/anchors/CI3/index.php/tabelas">
         <div
           class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
           <svg
