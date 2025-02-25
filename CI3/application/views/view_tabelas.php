@@ -16,6 +16,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
@@ -332,9 +333,9 @@
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">01/02/2010</span>
                       </td>
-                      <td class="align-middle">
-                        <a href="https://wa.me/123456789" class="btn btn-success btn-sm" target="_blank">
-                          Contato no WhatsApp
+                      <td class="align-middle text-center">
+                        <a href="https://wa.me/123456789" class="btn btn-success" target="_blank">
+                          <i class="fa-brands fa-whatsapp"></i>
                         </a>
                       </td>
                     </tr>
@@ -406,60 +407,56 @@
               <h6>Contatos</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
+              <div class="table-responsive p-3">
+                <table class="table table-hover align-items-center text-nowrap">
+                  <thead class="thead-light">
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome fantasia</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">CNPJ</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Data de Contato</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Próximo Contato</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Responsável</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Data de Contato</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Próximo Contato</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Responsável</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Criação</th>
-                      <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                    // Conexão com o banco de dados
                     $conn = new mysqli("localhost", "root", "", "anchors");
 
                     if ($conn->connect_error) {
                       die("Conexão falhou: " . $conn->connect_error);
                     }
 
-                    // Consulta SQL
                     $sql = "SELECT nome_fantasia, cnpj, data_contato, proximo_contato, responsavel, status, criado_em FROM contatos";
                     $result = $conn->query($sql);
 
-                    // Verifica se há resultados e os exibe
                     if ($result->num_rows > 0) {
                       while ($row = $result->fetch_assoc()) {
-                        echo "<tr >
-                            <td>" . $row["nome_fantasia"] . "</td>
-                            <td>" . $row["cnpj"] . "</td>
-                            <td>" . $row["data_contato"] . "</td>
-                            <td>" . $row["proximo_contato"] . "</td>
-                            <td>" . $row["responsavel"] . "</td>
-                            <td class='text-center'>
-                              <span class='badge badge-sm bg-gradient-" . ($row["status"] == 'Pendente' ? "success" : "warning") . "'>" . $row["status"] . "</span>
-                            </td>
-                            <td class='text-center'>
-                              <span class='text-secondary text-xs font-weight-bold'>" . $row["criado_em"] . "</span>
-                            </td>
-                          </tr>";
+                        echo "<tr>
+                  <td class='px-3'>" . $row["nome_fantasia"] . "</td>
+                  <td class='px-3'>" . $row["cnpj"] . "</td>
+                  <td class='text-center px-3'>" . $row["data_contato"] . "</td>
+                  <td class='text-center px-3'>" . $row["proximo_contato"] . "</td>
+                  <td class='px-3'>" . $row["responsavel"] . "</td>
+                  <td class='text-center px-3'>
+                    <span class='badge badge-sm bg-gradient-" . ($row["status"] == 'Pendente' ? "warning" : "success") . "'>" . $row["status"] . "</span>
+                  </td>
+                  <td class='text-center px-3'>
+                    <span class='text-secondary text-xs font-weight-bold'>" . $row["criado_em"] . "</span>
+                  </td>
+                </tr>";
                       }
                     } else {
-                      echo "<tr><td colspan='8' class='text-center'>Nenhum contato encontrado</td></tr>";
+                      echo "<tr><td colspan='7' class='text-center'>Nenhum contato encontrado</td></tr>";
                     }
 
-                    // Fecha a conexão com o banco de dados
                     $conn->close();
                     ?>
                   </tbody>
                 </table>
               </div>
+
             </div>
           </div>
         </div>
