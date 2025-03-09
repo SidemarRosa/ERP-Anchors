@@ -37,7 +37,7 @@
                 class="navbar-brand m-0"
                 href="http://localhost/anchors/CI3/index.php/dashboard">
                 <img
-                    src="../assets/img/logo"
+                    src="../assets/img/fav/favicon.ico"
                     class="navbar-brand-img h-100"
                     alt="main_logo" />
                 <span class="ms-1 font-weight-bold">Anchorstec</span>
@@ -814,133 +814,6 @@
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">$1400, New design</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cards de Estatísticas -->
-            <div class="row mt-4">
-                <!-- Card: Users Active -->
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="card">
-                        <span class="mask bg-primary opacity-10 border-radius-lg"></span>
-                        <div class="card-body p-3 position-relative">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    <div class="icon icon-shape bg-white shadow text-center border-radius-2xl">
-                                        <i class="ni ni-circle-08 text-dark text-gradient text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                    <h5 class="text-white font-weight-bolder mb-0 mt-3">1600</h5>
-                                    <span class="text-white text-sm">Users Active</span>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="dropdown">
-                                        <a href="javascript:;" class="cursor-pointer" id="dropdownUsers1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-h text-white"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownUsers1">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                    <p class="text-white text-sm font-weight-bolder mt-auto mb-0">+55%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card: Click Events -->
-                <div class="col-lg-6 col-md-6 col-12 mt-4 mt-md-0">
-                    <div class="card">
-                        <span class="mask bg-dark opacity-10 border-radius-lg"></span>
-                        <div class="card-body p-3 position-relative">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    <div class="icon icon-shape bg-white shadow text-center border-radius-2xl">
-                                        <i class="ni ni-active-40 text-dark text-gradient text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                    <h5 class="text-white font-weight-bolder mb-0 mt-3">357</h5>
-                                    <span class="text-white text-sm">Click Events</span>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="dropstart">
-                                        <a href="javascript:;" class="cursor-pointer" id="dropdownUsers2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-h text-white"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownUsers2">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                    <p class="text-white text-sm font-weight-bolder mt-auto mb-0">+124%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <!-- Card: Purchases -->
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="card">
-                        <span class="mask bg-dark opacity-10 border-radius-lg"></span>
-                        <div class="card-body p-3 position-relative">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    <div class="icon icon-shape bg-white shadow text-center border-radius-2xl">
-                                        <i class="ni ni-cart text-dark text-gradient text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                    <h5 class="text-white font-weight-bolder mb-0 mt-3">2300</h5>
-                                    <span class="text-white text-sm">Purchases</span>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="dropdown">
-                                        <a href="javascript:;" class="cursor-pointer" id="dropdownUsers3" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-h text-white"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownUsers3">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                    <p class="text-white text-sm font-weight-bolder mt-auto mb-0">+15%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card: Likes -->
-                <div class="col-lg-6 col-md-6 col-12 mt-4 mt-md-0">
-                    <div class="card">
-                        <span class="mask bg-dark opacity-10 border-radius-lg"></span>
-                        <div class="card-body p-3 position-relative">
-                            <div class="row">
-                                <div class="col-8 text-start">
-                                    <div class="icon icon-shape bg-white shadow text-center border-radius-2xl">
-                                        <i class="ni ni-like-2 text-dark text-gradient text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                    <h5 class="text-white font-weight-bolder mb-0 mt-3">940</h5>
-                                    <span class="text-white text-sm">Likes</span>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="dropstart">
-                                        <a href="javascript:;" class="cursor-pointer" id="dropdownUsers4" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-h text-white"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownUsers4">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                    <p class="text-white text-sm font-weight-bolder mt-auto mb-0">+90%</p>
                                 </div>
                             </div>
                         </div>
