@@ -304,7 +304,7 @@
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
-                                Side Rosa
+                            <?php echo $usuario->nome; ?>
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
                                 CEO / CTO
@@ -362,7 +362,7 @@
                                 </li>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
                 <div class="col-12 col-xl-8">
@@ -374,83 +374,92 @@
                                 </div>
                                 <div class="col-md-4 text-end">
                                     <a href="javascript:;">
-                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar Perfil"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body p-3">
-                            <p class="text-sm">
-                                Olá, eu sou Side Rosa, CEO da Anchorstec. Decisões: Se você não pode decidir, a resposta é não. Se dois caminhos são igualmente difíceis, escolha o mais doloroso no curto prazo (evitar a dor está criando uma ilusão de igualdade).
-                            </p>
-                            <hr class="horizontal gray-light my-4">
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nome completo</strong> &nbsp; Side Rosa</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Telefone</strong> &nbsp; (44) 987 6543 210</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; siderosa@gmail.com</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Endereço</strong> &nbsp; Brazil</li>
-                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Empresa</strong> &nbsp; Anchorstec</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Cnpj</strong> &nbsp; 449876543210</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email Corporativo:</strong> &nbsp; siderosa@Anchorstec.com</li>
-                                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Endereço</strong> &nbsp; Brazil</li>
-                                <li class="list-group-item border-0 ps-0 pb-0">
-                                    <strong class="text-dark text-sm">Redes sociais</strong> &nbsp;
-                                    <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                        <i class="fab fa-facebook fa-lg"></i>
-                                    </a>
-                                    <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                        <i class="fab fa-twitter fa-lg"></i>
-                                    </a>
-                                    <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
-                                        <i class="fab fa-instagram fa-lg"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <?php if (isset($usuario) && is_object($usuario)): ?>
+                            <div class="card-body p-3">
+                                <p class="text-sm">
+                                    Olá, eu sou <?php echo $usuario->nome; ?>, ADICIONAR CARGO da ADICIONAR EMPRESA
+                                    Decisões: Se você não pode decidir, a resposta é não. Se dois caminhos são igualmente difíceis, escolha o mais doloroso no curto prazo (evitar a dor está criando uma ilusão de igualdade).
+                                </p>
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm">
+                                        <strong class="text-dark">Nome completo</strong> &nbsp; <?php echo $usuario->nome; ?>
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">Telefone</strong> &nbsp; <?php echo $usuario->telefone; ?>
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">Email:</strong> &nbsp; <?php echo $usuario->email; ?>
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">Endereço</strong> &nbsp; <?php echo $usuario->endereco; ?>
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm">
+                                        <strong class="text-dark">Empresa</strong> ADICIONAR
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">CNPJ</strong> ADICIONAR
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">Email Corporativo:</strong> ADICIONAR
+                                    </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                        <strong class="text-dark">Endereço</strong> &nbsp; <?php echo $usuario->endereco; ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php else: ?>
+                            <p>Usuário não encontrado ou os dados não estão disponíveis.</p>
+                        <?php endif; ?>
                     </div>
                 </div>
-            </div>
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div
-                                class="copyright text-center text-sm text-muted text-lg-end">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                , Feito com carinho <i class="fa fa-heart"></i> por
-                                <a
-                                    href="https://anchorstec.com.br"
-                                    class="font-weight-bold"
-                                    target="_blank">Anchorstec</a>
-                                para o futuro!
+
+                <footer class="footer pt-3  ">
+                    <div class="container-fluid">
+                        <div class="row align-items-center justify-content-lg-between">
+                            <div class="col-lg-6 mb-lg-0 mb-4">
+                                <div
+                                    class="copyright text-center text-sm text-muted text-lg-end">
+                                    ©
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                    , Feito com carinho <i class="fa fa-heart"></i> por
+                                    <a
+                                        href="https://anchorstec.com.br"
+                                        class="font-weight-bold"
+                                        target="_blank">Anchorstec</a>
+                                    para o futuro!
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
         </div>
-    </div>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
+        <!--   Core JS Files   -->
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+        <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+        <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+        <script>
+            var win = navigator.platform.indexOf('Win') > -1;
+            if (win && document.querySelector('#sidenav-scrollbar')) {
+                var options = {
+                    damping: '0.5'
+                }
+                Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
             }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+        </script>
+        <!-- Github buttons -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 </body>
 
 </html>

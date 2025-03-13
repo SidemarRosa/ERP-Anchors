@@ -9,37 +9,30 @@ class Perfil extends CI_Controller
 
         // Carregar o modelo de usuário
         $this->load->model('Model_usuario');
-        $this->load->library('session');
-        $this->load->helper('url'); // Carregar o helper de URL
-        $this->load->helper('form'); // Carregar o helper de formulário
 
         // Verificar se o usuário está logado
         if (!$this->session->userdata('logged_in')) {
-            redirect(base_url('login')); // Redirecionar para login caso o usuário não esteja logado
+            redirect('login'); // Redirecionar para login caso o usuário não esteja logado
         }
     }
     public function index()
     {
-        $this->load->view('view_perfil');
-        // Verificar se o usuário está logado
-        if ($this->session->userdata('logged_in')) {
-            // Carregar o modelo para acessar os dados do usuário
-            $this->load->model('User_model');
+        // Obter o id do usuário (deve ser definido de acordo com a sua lógica de login)
+        $user_id = $this->session->userdata('user_id');
 
-            // Obter o ID do usuário da sessão
-            $userId = $this->session->userdata('user_id');
+        // Carregar o modelo
+        $this->load->model('Model_usuario');
 
-            // Recuperar as informações do usuário usando o ID
-            $userData = $this->User_model->get_user_data($userId);
+        // Obter os dados do usuário com base no ID
+        $dados['usuario'] = $this->Model_usuario->getUsuarioById($user_id);
 
-            // Passar os dados do usuário para a visão
-            $data['user'] = $userData;
-
-            // Carregar a visão do perfil
-            $this->load->view('view_perfil', $data);
+        // Verificar se o usuário foi encontrado
+        if ($dados['usuario']) {
+            // Carregar a view passando os dados do usuário
+            $this->load->view('view_perfil', $dados);
         } else {
-            // Redirecionar para a página de login se o usuário não estiver logado
-            redirect('login');
+            // Se não encontrar, redirecionar ou exibir uma mensagem de erro
+            show_error('Usuário não encontrado!');
         }
     }
 }

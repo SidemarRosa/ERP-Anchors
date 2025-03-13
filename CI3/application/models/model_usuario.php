@@ -17,11 +17,15 @@ class Model_usuario extends CI_Model
         return $query->result();
     }
 
-    // Método exemplo para obter um usuário pelo ID
+    // Método para obter um usuário pelo ID
     public function getUsuarioById($id)
     {
-        $query = $this->db->get_where('usuarios', array('id' => $id));
-        return $query->row();
+        // Verificar se o ID é válido
+        if ($id) {
+            $query = $this->db->get_where('usuarios', array('id' => $id));
+            return $query->row();  // Retorna uma linha ou NULL
+        }
+        return NULL;  // Retorna NULL se o ID não for válido
     }
 
     // Método exemplo para inserir um novo usuário

@@ -23,9 +23,9 @@ class Login extends CI_Controller
 
             if ($user) {
                 $this->session->set_userdata([
-                    'user_id' => $usuario->id,
-                    'user_name' => $usuario->nome,
-                    'user_email' => $usuario->email,
+                    'user_id' => $user->id,
+                    'user_name' => $user->nome,
+                    'user_email' => $user->email,
                     'logged_in' => true  // Define o estado de login
                 ]);
 
