@@ -28,12 +28,6 @@ class Model_usuario extends CI_Model
         return NULL;  // Retorna NULL se o ID não for válido
     }
 
-    // Método exemplo para inserir um novo usuário
-    public function inserirUsuario($dados)
-    {
-        return $this->db->insert('usuarios', $dados);
-    }
-
     // Método exemplo para atualizar um usuário
     public function atualizarUsuario($id, $dados)
     {

@@ -217,11 +217,10 @@
         <span class="nav-link-text ms-1">Perfil</span>
       </a>
     </li>
-    <!-- Icone logout -->
+    <!-- Ícone de Logout -->
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login">
-        <div
-          class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+      <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login/logout">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
           <svg
             width="12px"
             height="20px"
@@ -259,7 +258,7 @@
             </g>
           </svg>
         </div>
-        <span class="nav-link-text ms-1">Logout</span>
+        <span class="nav-link-text ms-1">Logout</span> <!-- Texto "Logout" -->
       </a>
     </li>
     </ul>

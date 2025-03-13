@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/fav/apple-icon.png">
     <link rel="icon" type="image/ico" href="../assets/img/fav/favicon.ico">
     <title>
         ERP Anchorstec - Perfil
@@ -37,7 +36,7 @@
                 class="navbar-brand m-0"
                 href="http://localhost/anchors/CI3/index.php/dashboard">
                 <img
-                    src="../assets/img/logo"
+                    src="../assets/img/fav/favicon.ico"
                     class="navbar-brand-img h-100"
                     alt="main_logo" />
                 <span class="ms-1 font-weight-bold">Anchorstec</span>
@@ -216,11 +215,10 @@
                 <span class="nav-link-text ms-1">Perfil</span>
             </a>
         </li>
-        <!-- Icone logout -->
+        <!-- Ícone de Logout -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login">
-                <div
-                    class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login/logout">
+                <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                     <svg
                         width="12px"
                         height="20px"
@@ -258,7 +256,7 @@
                         </g>
                     </svg>
                 </div>
-                <span class="nav-link-text ms-1">Logout</span>
+                <span class="nav-link-text ms-1">Logout</span> <!-- Texto "Logout" -->
             </a>
         </li>
         </ul>
@@ -304,7 +302,7 @@
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
-                            <?php echo $usuario->nome; ?>
+                                <?php echo $usuario->nome; ?>
                             </h5>
                             <p class="mb-0 font-weight-bold text-sm">
                                 CEO / CTO
