@@ -44,28 +44,38 @@
                         </div>
                         <div class="card-body">
                             <form action="http://localhost/anchors/CI3/index.php/cadastro/processar" method="POST">
+
+                                <!-- Token CSRF -->
+                                <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" />
+
                                 <div class="mb-3">
                                     <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+                                    <div class="text-danger"><?= form_error('nome'); ?></div>
                                 </div>
                                 <div class="mb-3">
                                     <input type="text" class="form-control" name="documento" placeholder="CNPJ ou CPF" required>
+                                    <div class="text-danger"><?= form_error('documento'); ?></div>
                                 </div>
                                 <div class="mb-3">
                                     <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                    <div class="text-danger"><?= form_error('email'); ?></div>
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+                                    <div class="text-danger"><?= form_error('senha'); ?></div>
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" class="form-control" name="confirmar_senha" placeholder="Confirme sua Senha" required>
+                                    <div class="text-danger"><?= form_error('confirmar_senha'); ?></div>
                                 </div>
                                 <div class="">
                                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2 text-white">Registrar</button>
                                 </div>
                                 <p class="text-sm mt-3 mb-0">
-                                    Já tem uma conta? <a href="http://localhost/anchors/CI3/index.php/login" class="text-dark font-weight-bolder">Faça login</a>
+                                    Já tem uma conta? <a href="<?= site_url('Login') ?>" class="text-dark font-weight-bolder">Faça login</a>
                                 </p>
                             </form>
+
                         </div>
                     </div>
                 </div>
