@@ -12,6 +12,8 @@
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -217,11 +219,10 @@
                         <span class="nav-link-text ms-1">Perfil</span>
                     </a>
                 </li>
-                <!-- Icone logout -->
+                <!-- Ícone de Logout -->
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <a class="nav-link" href="http://localhost/anchors/CI3/index.php/logout">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg
                                 width="12px"
                                 height="20px"
@@ -259,9 +260,11 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Logout</span>
+                        <span class="nav-link-text ms-1">Logout</span> <!-- Texto "Logout" -->
                     </a>
                 </li>
+
+
             </ul>
         </div>
         <div class="sidenav-footer mx-3">
@@ -300,6 +303,16 @@
                     </ol>
                     <h6 class="font-weight-bolder mb-0">Dashboard</h6>
                 </nav>
+                <div class="align-items-center">
+                    <!-- Saudação com nome da variável de sessão -->
+                    <?php if ($this->session->userdata('user_name')): ?>
+                        <span class="fs-5 fw-bold text-dark">Olá, <?php echo $this->session->userdata('user_name'); ?>!</span>
+                    <?php else: ?>
+                        <span class="fs-5 fw-bold text-dark">Olá, visitante!</span>
+                    <?php endif; ?>
+                </div>
+
+
                 <div
                     class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
                     id="navbar">

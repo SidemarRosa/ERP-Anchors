@@ -23,6 +23,7 @@ class Login extends CI_Controller
 
             if ($user) {
                 $this->session->set_userdata('user_id', $user->id);
+                $this->session->set_userdata('user_name', $user->nome);
                 redirect('http://localhost/anchors/CI3/index.php/dashboard');
             } else {
                 echo 'Usuário ou senha inválidos';
