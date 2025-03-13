@@ -35,11 +35,6 @@
                   <p class="mb-0">Insira seu email e sua senha para realizar o login.</p>
                 </div>
                 <div class="card-body">
-                  <!-- Exibir mensagem de erro -->
-                  <?php if ($this->session->flashdata('erro')): ?>
-                    <div class="alert alert-danger"><?= $this->session->flashdata('erro'); ?></div>
-                  <?php endif; ?>
-
                   <!-- Formulário de login -->
                   <form role="form" method="post" action="<?= base_url('login'); ?>">
                     <label>Email</label>
@@ -71,7 +66,8 @@
             </div>
             <div class="col-md-6">
               <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('<?= base_url('assets/img/curved-images/curved6.jpg'); ?>')"></div>
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image: url('http://localhost/anchors/CI3/assets/img/curved-images/curved6.jpg');
+"></div>
               </div>
             </div>
           </div>
