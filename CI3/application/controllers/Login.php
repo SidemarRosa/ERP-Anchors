@@ -22,8 +22,13 @@ class Login extends CI_Controller
             $user = $this->Model_login->verifica_usuario($email, $senha);
 
             if ($user) {
-                $this->session->set_userdata('user_id', $user->id);
-                $this->session->set_userdata('user_name', $user->nome);
+                $this->session->set_userdata([
+                    'user_id' => $usuario->id,
+                    'user_name' => $usuario->nome,
+                    'user_email' => $usuario->email,
+                    'logged_in' => true  // Define o estado de login
+                ]);
+
                 redirect('http://localhost/anchors/CI3/index.php/dashboard');
             } else {
                 echo 'Usuário ou senha inválidos';
@@ -31,5 +36,12 @@ class Login extends CI_Controller
         }
 
         $this->load->view('view_login');
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();  // Para destruir a sessão do usuário
+
+        redirect('http://localhost/anchors/CI3/index.php/login');  // Redirecionar para a página de login
     }
 }

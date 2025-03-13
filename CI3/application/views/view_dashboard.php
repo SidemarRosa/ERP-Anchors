@@ -221,7 +221,7 @@
                 </li>
                 <!-- Ícone de Logout -->
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/anchors/CI3/index.php/logout">
+                    <a class="nav-link" href="http://localhost/anchors/CI3/index.php/login/logout">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg
                                 width="12px"
