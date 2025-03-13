@@ -25,10 +25,3 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-
-$conexao = mysqli_connect($db['default']['hostname'], $db['default']['username'], $db['default']['password'], $db['default']['database']);
-if (!$conexao) {
-	die("Falha na conexão: " . mysqli_connect_error());
-} else {
-	echo "Conexão bem sucedida";
-}

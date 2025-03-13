@@ -9,24 +9,26 @@ class Login extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->helper('form');
+        $this->load->model('Model_login');
         date_default_timezone_set('America/Sao_Paulo');
     }
     public function index()
     {
-        // Verifique se o formulário foi enviado
         if ($this->input->post()) {
             $email = $this->input->post('email');
             $senha = $this->input->post('password');
 
-            // Verifique se o email e a senha são válidos
-            if ($email == 'sidemarrosa25@gmail.com' && $senha == '123') {
-                redirect('dashboard');
+            // Verifica usuário no banco
+            $user = $this->Model_login->verifica_usuario($email, $senha);
+
+            if ($user) {
+                $this->session->set_userdata('user_id', $user->id);
+                redirect('http://localhost/anchors/CI3/index.php/dashboard');
             } else {
                 echo 'Usuário ou senha inválidos';
             }
         }
 
-        // Carregar a view de login
         $this->load->view('view_login');
     }
 }
