@@ -34,7 +34,7 @@ class Cadastro extends CI_Controller
                 'nome'      => $this->input->post('nome'),
                 'documento' => $this->input->post('documento'),
                 'email'     => $this->input->post('email'),
-                'senha'     => password_hash($this->input->post('senha'), PASSWORD_DEFAULT) // Criptografa a senha
+                'senha' => md5($this->input->post('senha'))
             );
 
             // Insere no banco de dados usando o Model
