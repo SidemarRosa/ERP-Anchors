@@ -564,7 +564,7 @@
                     <!-- Card de Pedidos -->
                     <div class="card h-50">
                         <div class="card-header pb-0">
-                            <h6>Ultimos Pedidos</h6>
+                            <h6>Ultimas Vendas</h6>
                             <!-- <p class="text-sm">
                                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
                                 <span class="font-weight-bold">10%</span> Esse mês
