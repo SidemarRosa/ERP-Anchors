@@ -295,102 +295,85 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="row">
-            <div class="col-xl-6">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-header mx-4 p-3 text-center">
-                      <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
-                        <i class="fas fa-landmark opacity-10"></i>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 p-3 text-center">
-                      <h6 class="text-center mb-0">Receita</h6>
-                      <span class="text-xs">Saldo de entradas</span>
-                      <hr class="horizontal dark my-3">
-                      <h5 class="mb-0">+$2000</h5>
-                    </div>
+            <!-- Receita -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header mx-4 p-3 text-center">
+                  <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center rounded-circle">
+                    <i class="fas fa-landmark opacity-10"></i>
                   </div>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-4">
-                  <div class="card">
-                    <div class="card-header mx-4 p-3 text-center">
-                      <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
-                        <i class="fas fa-money-bill-wave opacity-10"></i>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 p-3 text-center">
-                      <h6 class="text-center mb-0">Gastos</h6>
-                      <span class="text-xs">Saldo de saidas</span>
-                      <hr class="horizontal dark my-3">
-                      <h5 class="mb-0">$455.00</h5>
-                    </div>
-                  </div>
+                <div class="card-body pt-0 p-3 text-center">
+                  <h6 class="text-center mb-0">Receita</h6>
+                  <span class="text-xs">Saldo de entradas</span>
+                  <hr class="horizontal dark my-3">
+                  <h5 class="mb-0 text-success">R$ <?= number_format($totalContasAReceber, 2, ',', '.'); ?></h5>
                 </div>
               </div>
             </div>
-            <div class="col-xl-6">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-header mx-4 p-3 text-center">
-                      <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
-                        <i class="fas fa-landmark opacity-10"></i>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 p-3 text-center">
-                      <h6 class="text-center mb-0">Lucro</h6>
-                      <span class="text-xs">Lucro medio</span>
-                      <hr class="horizontal dark my-3">
-                      <h5 class="mb-0">+$2000</h5>
-                    </div>
+
+            <!-- Gastos -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header mx-4 p-3 text-center">
+                  <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center rounded-circle">
+                    <i class="fas fa-money-bill-wave opacity-10"></i>
                   </div>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-4">
-                  <div class="card">
-                    <div class="card-header mx-4 p-3 text-center">
-                      <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
-                        <i class="fab fa-paypal opacity-10"></i>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 p-3 text-center">
-                      <h6 class="text-center mb-0">Investimentos</h6>
-                      <span class="text-xs">Valores investidos</span>
-                      <hr class="horizontal dark my-3">
-                      <h5 class="mb-0">$455.00</h5>
-                    </div>
-                  </div>
+                <div class="card-body pt-0 p-3 text-center">
+                  <h6 class="text-center mb-0">Gastos</h6>
+                  <span class="text-xs">Saldo de saídas</span>
+                  <hr class="horizontal dark my-3">
+                  <h5 class="mb-0 text-danger">R$ <?= number_format($totalContasAPagar, 2, ',', '.'); ?></h5>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 mb-lg-0 mb-4">
-              <div class="card mt-4">
-                <div class="card-header pb-0 p-3">
-                  <div class="row">
-                    <div class="col-6 d-flex align-items-center">
-                      <h6 class="mb-0">Contas Bancarias</h6>
-                    </div>
-                    <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>
-                    </div>
+
+            <!-- Lucro -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header mx-4 p-3 text-center">
+                  <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center rounded-circle">
+                    <i class="fas fa-landmark opacity-10"></i>
                   </div>
                 </div>
-                <div class="card-body p-3">
-                  <div class="row">
-                    <div class="col-md-6 mb-md-0 mb-4">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="../assets/img/logos/mastercard.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="../assets/img/logos/visa.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
-                    </div>
+                <div class="card-body pt-0 p-3 text-center">
+                  <h6 class="text-center mb-0">Lucro</h6>
+                  <span class="text-xs">Lucro médio</span>
+                  <hr class="horizontal dark my-3">
+                  <h5 class="mb-0 text-success">R$ <?= number_format($lucro, 2, ',', '.'); ?></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Contas Bancarias -->
+        <div class="col-md-12 mb-lg-0 mb-4">
+          <div class="card mt-4">
+            <div class="card-header pb-0 p-3">
+              <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                  <h6 class="mb-0">Contas Bancarias</h6>
+                </div>
+                <div class="col-6 text-end">
+                  <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-md-6 mb-md-0 mb-4">
+                  <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
+                    <img class="w-10 me-3 mb-0" src="../assets/img/logos/mastercard.png" alt="logo">
+                    <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
+                    <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
+                    <img class="w-10 me-3 mb-0" src="../assets/img/logos/visa.png" alt="logo">
+                    <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
+                    <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                   </div>
                 </div>
               </div>
