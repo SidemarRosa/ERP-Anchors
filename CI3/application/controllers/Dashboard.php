@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
         $this->load->helper('url'); // Carrega o helper de URL para usar redirect()
         $this->load->library('session'); // Carrega a biblioteca de sessão
         $this->load->model('Model_clientes'); // Carrega o model Model_clientes
+        $this->load->model('Model_usuario'); // Carrega o model Model_usuario
     }
     public function index()
     {   
@@ -20,14 +21,21 @@ class Dashboard extends CI_Controller
             $clientesHoje = $this->Model_clientes->getClientesHoje();
             $clientesOntem = $this->Model_clientes->getClientesOntem();
             $percentualClientes = $this->Model_clientes->calcularPercentual($clientesHoje, $clientesOntem);
-            
-            //carrega dados para a view dashboard
+            //usuarios isights
+            $usuariosHoje = $this->Model_usuario->getUsuariosHoje();
+            $usuariosOntem = $this->Model_usuario->getUsuariosOntem();
+            $percentualUsuarios = $this->Model_usuario->calcularPercentual($usuariosHoje, $usuariosOntem);
+            //dados para a view
             $data = [
                 'clientesHoje' => $clientesHoje,
-                'percentual' => $percentualClientes
+                'percentualClientes' => $percentualClientes,
+                'usuariosHoje' => $usuariosHoje,
+                'percentualUsuarios' => $percentualUsuarios
             ];
-    
+            
+            // Carregar a view e passar os dados
             $this->load->view('view_dashboard', $data);
+            
         }
     }
 }

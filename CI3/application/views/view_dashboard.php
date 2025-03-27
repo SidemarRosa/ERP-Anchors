@@ -331,107 +331,107 @@
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Caixa de hoje
-                                        </p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            R$32,27
-                                            <span class="text-success text-sm font-weight-bolder">+30%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i
-                                            class="ni ni-money-coins text-lg opacity-10"
-                                            aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- Caixa de Hoje -->
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Caixa de hoje</p>
+                            <h5 class="font-weight-bolder mb-0">
+                                R$32,27
+                                <span class="text-success text-sm font-weight-bolder">+30%</span>
+                            </h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Usuarios
-                                        </p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            1
-                                            <span class="text-success text-sm font-weight-bolder">+100%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i
-                                            class="ni ni-world text-lg opacity-10"
-                                            aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                            <div class="col-8">
-                                <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Clientes</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            +<?= $clientesHoje ?>
-                                            <span class="text-<?= $percentual >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
-                                                <?= $percentual >= 0 ? '+' : '' ?><?= number_format($percentual, 0) ?>%
-                                            </span>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">
-                                            Vendas
-                                        </p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            R$0
-                                            <span class="text-success text-sm font-weight-bolder">0%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i
-                                            class="ni ni-cart text-lg opacity-10"
-                                            aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                            <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Usuários -->
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Usuários</p>
+                            <h5 class="font-weight-bolder mb-0">
+                                +<?= $usuariosHoje ?>
+                                <span class="text-<?= $percentualUsuarios >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
+                                    <?= $percentualUsuarios >= 0 ? '+' : '' ?><?= number_format($percentualUsuarios, 0) ?>%
+                                </span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clientes -->
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Clientes</p>
+                            <h5 class="font-weight-bolder mb-0">
+                                +<?= $clientesHoje ?>
+                                <span class="text-<?= $percentualClientes >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
+                                    <?= $percentualClientes >= 0 ? '+' : '' ?><?= number_format($percentualClientes, 0) ?>%
+                                </span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                            <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendas -->
+    <div class="col-xl-3 col-sm-6">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Vendas</p>
+                            <h5 class="font-weight-bolder mb-0">
+                                R$0
+                                <span class="text-success text-sm font-weight-bolder">0%</span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                            <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             <div class="row mt-4">
                 <div class="col-lg-7 mb-lg-0 mb-4">
                     <div class="card">
