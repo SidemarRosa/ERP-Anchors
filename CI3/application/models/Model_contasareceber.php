@@ -60,6 +60,17 @@ class Model_contasareceber extends CI_Model {
         return (($valorHoje - $valorOntem) / $valorOntem) * 100;
     }
     
+      // Função para pegar as 2 últimas vendas
+      public function getUltimasVendas() {
+        // Consulta para pegar as 2 últimas contas a receber (vendas)
+        $this->db->select('valor, descricao, data_pagamento');
+        $this->db->from('contasareceber');
+        $this->db->order_by('data_pagamento', 'DESC');
+        $this->db->limit(3);
+        $query = $this->db->get();
+
+        return $query->result_array();  // Retorna como array
+    }
     
     
 }

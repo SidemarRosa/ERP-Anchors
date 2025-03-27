@@ -48,7 +48,8 @@ class Dashboard extends CI_Controller
             $vendasPorMes = $this->Model_contasareceber->getVendasPorMes();
             // Meses do ano
             $meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
+            //ultimas 2 vendas
+            $ultimasVendas = $this->Model_contasareceber->getUltimasVendas();
 
             // Dados para a view
             $data = [
@@ -62,7 +63,8 @@ class Dashboard extends CI_Controller
                 'contasAReceberHoje' => $contasAReceberHoje,
                 'lucro' => $lucro,
                 'labels' => $meses,
-                'vendas' => array_values($vendasPorMes)
+                'vendas' => array_values($vendasPorMes),
+                'ultimasVendas' => $ultimasVendas
             ];
  
             // Carregar a view e passar os dados

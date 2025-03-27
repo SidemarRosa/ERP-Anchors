@@ -561,39 +561,36 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Card de Pedidos -->
                     <div class="card h-50">
                         <div class="card-header pb-0">
-                            <h6>Pedidos</h6>
-                            <p class="text-sm">
+                            <h6>Ultimos Pedidos</h6>
+                            <!-- <p class="text-sm">
                                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
                                 <span class="font-weight-bold">10%</span> Esse mês
-                            </p>
+                            </p> -->
                         </div>
                         <div class="card-body p-3">
                             <div class="timeline timeline-one-side">
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-bell-55 text-success text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                                <?php foreach ($ultimasVendas as $venda): ?>
+                                    <div class="timeline-block mb-3">
+                                        <span class="timeline-step">
+                                            <i class="ni ni-bell-55 text-success text-gradient"></i>
+                                        </span>
+                                        <div class="timeline-content">
+                                            <h6 class="text-dark text-sm font-weight-bold mb-0">
+                                                R$ <?= number_format($venda['valor'], 2, ',', '.'); ?>, <?= $venda['descricao']; ?>
+                                            </h6>
+                                            <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
+                                                <?= date('d M Y', strtotime($venda['data_pagamento'])); ?>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-html5 text-danger text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">$1400, New design</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- Coluna da direita (Gráfico) -->
