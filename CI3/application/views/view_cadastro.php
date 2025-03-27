@@ -72,7 +72,7 @@
                                     <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2 text-white">Registrar</button>
                                 </div>
                                 <p class="text-sm mt-3 mb-0">
-                                    Já tem uma conta? <a href="<?= site_url('Login') ?>" class="text-dark font-weight-bolder">Faça login</a>
+                                    Já tem uma conta? <a href="http://localhost/anchors/CI3/index.php/Login" class="text-dark font-weight-bolder">Faça login</a>
                                 </p>
                             </form>
 
