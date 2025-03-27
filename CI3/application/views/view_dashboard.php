@@ -513,7 +513,7 @@
                                             </div>
                                             <p class="text-xs mt-1 mb-0 font-weight-bold">Usuários</p>
                                         </div>
-                                        <h4 class="font-weight-bolder">1</h4>
+                                        <h4 class="font-weight-bolder"><?= $usuariosAtivos ?></h4>
                                         <div class="progress w-75">
                                             <div class="progress-bar bg-dark w-60" role="progressbar"></div>
                                         </div>

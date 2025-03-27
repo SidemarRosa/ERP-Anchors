@@ -27,6 +27,7 @@ class Dashboard extends CI_Controller
             $usuariosHoje = $this->Model_usuario->getUsuariosHoje();
             $usuariosOntem = $this->Model_usuario->getUsuariosOntem();
             $percentualUsuarios = $this->Model_usuario->calcularPercentual($usuariosHoje, $usuariosOntem);
+            $usuariosAtivos = $this->Model_usuario->getUsuariosAtivos();
           // Vendas e compras insights
             $totalContasAReceber = $this->Model_contasareceber->getTotalContasAReceber();
             $totalContasAPagar = $this->Model_contasapagar->getTotalContasAPagar();
@@ -64,7 +65,8 @@ class Dashboard extends CI_Controller
                 'lucro' => $lucro,
                 'labels' => $meses,
                 'vendas' => array_values($vendasPorMes),
-                'ultimasVendas' => $ultimasVendas
+                'ultimasVendas' => $ultimasVendas,
+                'usuariosAtivos' => $usuariosAtivos
             ];
  
             // Carregar a view e passar os dados

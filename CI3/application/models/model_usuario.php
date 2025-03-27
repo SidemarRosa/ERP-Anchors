@@ -53,5 +53,9 @@ class Model_usuario extends CI_Model
         if ($ontem == 0) return $hoje > 0 ? 100 : 0; // Evitar divisão por zero
         return (($hoje - $ontem) / $ontem) * 100;
     }
+    public function getUsuariosAtivos() {
+        $this->db->where('ativo', '1');
+        return $this->db->count_all_results('usuarios');
+    }
 }
 ?>
