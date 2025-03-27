@@ -13,7 +13,7 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -329,7 +329,9 @@
             </div>
         </nav>
         <!-- End Navbar -->
+
         <div class="container-fluid py-4">
+            <!-- insights-->
             <div class="row">
                 <!-- Lucro do mês -->
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -347,100 +349,96 @@
                                         </h5>
                                     </div>
                                 </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Usuários -->
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Usuários</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            +<?= $usuariosHoje ?>
+                                            <br>
+                                            <span class="text-<?= $percentualUsuarios >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
+                                                <?= $percentualUsuarios >= 0 ? '+' : '' ?><?= number_format($percentualUsuarios, 0) ?>%
+                                            </span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Clientes -->
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Clientes</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            +<?= $clientesHoje ?>
+                                            <br>
+                                            <span class="text-<?= $percentualClientes >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
+                                                <?= $percentualClientes >= 0 ? '+' : '' ?><?= number_format($percentualClientes, 0) ?>%
+                                            </span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vendas -->
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Vendas Hoje</p>
+                                        <h5 class="font-weight-bolder mb-0">
+                                            R$ <?= number_format($totalContasAReceber, 2, ',', '.') ?>
+                                            <span class="text-<?= $percentualContasareceberHoje >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
+                                                <?= $percentualContasareceberHoje >= 0 ? '+' : '' ?><?= number_format($percentualContasareceberHoje, 2) ?>%
+                                            </span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Usuários -->
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Usuários</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                +<?= $usuariosHoje ?>
-                                <br>
-                                <span class="text-<?= $percentualUsuarios >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
-                                    <?= $percentualUsuarios >= 0 ? '+' : '' ?><?= number_format($percentualUsuarios, 0) ?>%
-                                </span>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="fas fa-user" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Clientes -->
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Clientes</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                +<?= $clientesHoje ?>
-                                <br>
-                                <span class="text-<?= $percentualClientes >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
-                                    <?= $percentualClientes >= 0 ? '+' : '' ?><?= number_format($percentualClientes, 0) ?>%
-                                </span>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-shop text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Vendas -->
-    <div class="col-xl-3 col-sm-6">
-        <div class="card">
-            <div class="card-body p-3">
-                <div class="row">
-                    <div class="col-8">
-                    <div class="numbers">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Vendas Hoje</p>
-                            <h5 class="font-weight-bolder mb-0">
-                                R$ <?= number_format($totalContasAReceber, 2, ',', '.') ?>
-                                <span class="text-<?= $percentualContasareceberHoje >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
-                                    <?= $percentualContasareceberHoje >= 0 ? '+' : '' ?><?= number_format($percentualContasareceberHoje, 2) ?>%
-                                </span>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                            <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+            <!-- card apresentação -->
             <div class="row mt-4">
-                <div class="col-lg-7 mb-lg-0 mb-4">
-                    <!-- card apresentação -->
+                <div class="col-lg-6 mb-lg-0 mb-4">
                     <div class="card">
                         <div class="card-body p-3">
                             <div class="row">
@@ -480,57 +478,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <!-- Card de Projetos -->
-                    <div class="card h-100 p-3">
-                        <div
-                            class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
-                            style="background-image: url('../assets/img/ivancik.jpg')">
-                            <span class="mask bg-gradient-dark"></span>
-                            <div
-                                class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                                <h5 class="text-white font-weight-bolder mb-4 pt-2">
-                                    Projetos
-                                </h5>
-                                <p class="text-white">
-                                    Projetos em andamento no setor de produção da anchorstec
-                                </p>
-                                <a
-                                    class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto"
-                                    href="javascript:;">
-                                    Ver mais
-                                    <i
-                                        class="fas fa-arrow-right text-sm ms-1"
-                                        aria-hidden="true"></i>
-                                </a>
+                <!-- Grafico de barras -->
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header pb-0">
+                            <h6>Vendas de produtos por ano</h6>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="chart">
+                                <canvas id="chart-bars" class="chart-canvas border-radius-lg" height="100"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <!-- Card de Usuários Ativos -->
-                <div class="col-lg-5 mb-lg-0 mb-4">
+
+            <div class="row mt-4 mb-4">
+                <!-- Coluna da esquerda (Usuários Ativos e Pedidos) -->
+                <div class="col-lg-6 d-flex flex-column gap-4">
+                    <!-- Card de Usuários Ativos -->
                     <div class="card z-index-2">
                         <div class="card-body p-3">
-                            <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
-                                <div class="chart">
-                                    <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                                </div>
-                            </div>
-                            <h6 class="ms-2 mt-4 mb-0">Usuarios ativos</h6>
+                            <h6 class="ms-2 mt-4 mb-0">Usuários ativos</h6>
                             <p class="text-sm ms-2">
                                 (<span class="font-weight-bolder">+100%</span>) comparado a semana passada
                             </p>
                             <div class="container border-radius-lg">
                                 <div class="row">
-                                    <!-- Usuarios -->
+                                    <!-- Usuários -->
                                     <div class="col-3 py-3 ps-0">
                                         <div class="d-flex mb-2">
                                             <div class="icon icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
                                                 <i class="fas fa-file-alt text-white"></i>
                                             </div>
-                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Usuarios</p>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Usuários</p>
                                         </div>
                                         <h4 class="font-weight-bolder">1</h4>
                                         <div class="progress w-75">
@@ -580,232 +561,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card de Vendas de Produtos -->
-                <div class="col-lg-7">
-                    <div class="card z-index-2">
-                        <div class="card-header pb-0">
-                            <h6>Vendas de produtos</h6>
-                            <p class="text-sm">
-                                <i class="fa fa-arrow-up text-success"></i>
-                                <span class="font-weight-bold">0% mais que</span> in 2024
-                            </p>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="chart">
-                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Container Principal -->
-            <div class="row my-4">
-                <!-- Card: Projects (Tabela) -->
-                <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-                    <div class="card">
-                        <div class="card-header pb-0">
-                            <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Projects</h6>
-                                    <p class="text-sm mb-0">
-                                        <i class="fa fa-check text-info" aria-hidden="true"></i>
-                                        <span class="font-weight-bold ms-1">10</span> Esse ano
-                                    </p>
-                                </div>
-                                <div class="col-lg-6 col-5 my-auto text-end">
-                                    <div class="dropdown float-lg-end pe-4">
-                                        <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-ellipsis-v text-secondary"></i>
-                                        </a>
-                                        <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pb-2">
-                            <div class="table-responsive">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Projeto
-                                            </th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Time
-                                            </th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Preço
-                                            </th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Status
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Linha 1 -->
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd" />
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">EcoAmbientec</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar-group mt-2">
-                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
-                                                        <img src="../assets/img/team-1.jpg" alt="Side" />
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold">R$ 0</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="progress-wrapper w-75 mx-auto">
-                                                    <div class="progress-info">
-                                                        <div class="progress-percentage">
-                                                            <span class="text-xs font-weight-bold">90%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Linha 2 -->
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian" />
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Urso Digital</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar-group mt-2">
-                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
-                                                        <img src="../assets/img/team-2.jpg" alt="Side" />
-                                                    </a>
-                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jean">
-                                                        <img src="../assets/img/team-4.jpg" alt="Jean" />
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold">$ 0</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="progress-wrapper w-75 mx-auto">
-                                                    <div class="progress-info">
-                                                        <div class="progress-percentage">
-                                                            <span class="text-xs font-weight-bold">100%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Linha 3 -->
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7" />
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Anchors Page</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar-group mt-2">
-                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
-                                                        <img src="../assets/img/team-3.jpg" alt="Side" />
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold">R$ 0</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="progress-wrapper w-75 mx-auto">
-                                                    <div class="progress-info">
-                                                        <div class="progress-percentage">
-                                                            <span class="text-xs font-weight-bold">100%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Linha 4 -->
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7" />
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">ERP - Anchors</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar-group mt-2">
-                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
-                                                        <img src="../assets/img/team-3.jpg" alt="Side" />
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold">R$ 0</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="progress-wrapper w-75 mx-auto">
-                                                    <div class="progress-info">
-                                                        <div class="progress-percentage">
-                                                            <span class="text-xs font-weight-bold">15%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-success w-15" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Pedidos (Timeline) -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
+                    <!-- Card de Pedidos -->
+                    <div class="card h-50">
                         <div class="card-header pb-0">
                             <h6>Pedidos</h6>
                             <p class="text-sm">
                                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                                <span class="font-weight-bold">10%</span> Esse mes
+                                <span class="font-weight-bold">10%</span> Esse mês
                             </p>
                         </div>
                         <div class="card-body p-3">
@@ -832,8 +595,234 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Coluna da direita (Gráfico) -->
+                <div class="col-lg-6">
+                    <div class="card z-index-2 shadow-sm h-100">
+                        <div class="card-header py-3">
+                            <h6 class="mb-0">Vendas por Produtos</h6>
+                            <p>Competente ao ano</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="chart-container">
+                                <canvas id="chart-line" class="chart-canvas" height="350"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+        </div>
+        <!-- Card de Projetos -->
+        <div class="card h-100 p-3">
+            <div
+                class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
+                style="background-image: url('../assets/img/ivancik.jpg')">
+                <span class="mask bg-gradient-dark"></span>
+                <div
+                    class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
+                    <h5 class="text-white font-weight-bolder mb-4 pt-2">
+                        Projetos
+                    </h5>
+                    <p class="text-white">
+                        Projetos em andamento no setor de produção da anchorstec
+                    </p>
+                    <a
+                        class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto"
+                        href="javascript:;">
+                        Ver mais
+                        <i
+                            class="fas fa-arrow-right text-sm ms-1"
+                            aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Card: Projects (Tabela) -->
+        <div class="row my-4">
+            <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6>Projects</h6>
+                                <p class="text-sm mb-0">
+                                    <i class="fa fa-check text-info" aria-hidden="true"></i>
+                                    <span class="font-weight-bold ms-1">10</span> Esse ano
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Projeto
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Time
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Preço
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Linha 1 -->
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd" />
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">EcoAmbientec</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="avatar-group mt-2">
+                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
+                                                    <img src="../assets/img/team-1.jpg" alt="Side" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-xs font-weight-bold">R$ 0</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-info">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">90%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Linha 2 -->
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian" />
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">Urso Digital</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="avatar-group mt-2">
+                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
+                                                    <img src="../assets/img/team-2.jpg" alt="Side" />
+                                                </a>
+                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jean">
+                                                    <img src="../assets/img/team-4.jpg" alt="Jean" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-xs font-weight-bold">$ 0</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-info">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">100%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Linha 3 -->
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7" />
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">Anchors Page</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="avatar-group mt-2">
+                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
+                                                    <img src="../assets/img/team-3.jpg" alt="Side" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-xs font-weight-bold">R$ 0</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-info">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">100%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Linha 4 -->
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7" />
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">ERP - Anchors</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="avatar-group mt-2">
+                                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Side">
+                                                    <img src="../assets/img/team-3.jpg" alt="Side" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="text-xs font-weight-bold">R$ 0</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-info">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">15%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-success w-15" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <!-- Footer -->
         <footer class="footer pt-3">
@@ -865,34 +854,27 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="../assets/js/plugins/chartjs.min.js"></script>
     <script>
-        var ctx = document.getElementById("chart-bars").getContext("2d");
+        // Preparando os dados para o gráfico
+        var labels = <?php echo json_encode($labels); ?>;
+        var vendasData = <?php echo json_encode($vendas); ?>;
 
+        // Criando o gráfico de barras PRIMEIRO DASHBOARD
+        var ctx = document.getElementById("chart-bars").getContext("2d");
         new Chart(ctx, {
-            type: "bar",
+            type: "bar", // Tipo de gráfico: barras
             data: {
-                labels: [
-                    "abr",
-                    "mai",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Set",
-                    "Oct",
-                    "Nov",
-                    "Dez",
-                ],
+                labels: labels,
                 datasets: [{
                     label: "Vendas",
                     tension: 0.4,
                     borderWidth: 0,
                     borderRadius: 4,
                     borderSkipped: false,
-                    backgroundColor: "#fff",
-                    data: [1, 5, 3, 5, 2, 1, 0, 6, 2],
+                    backgroundColor: "#800080", // Cor das barras
+                    data: vendasData,
                     maxBarThickness: 6,
-                }, ],
+                }]
             },
             options: {
                 responsive: true,
@@ -925,7 +907,8 @@
                                 style: "normal",
                                 lineHeight: 2,
                             },
-                            color: "#fff",
+                            color: "#0000FF", // Changed to blue
+
                         },
                     },
                     x: {
@@ -936,27 +919,23 @@
                             drawTicks: false,
                         },
                         ticks: {
-                            display: false,
+                            display: true,
                         },
                     },
                 },
             },
         });
 
+        // SEGUNDO DASHBOARD
         var ctx2 = document.getElementById("chart-line").getContext("2d");
-
         var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-        gradientStroke1.addColorStop(1, "rgba(203,12,159,0.2)");
+        gradientStroke1.addColorStop(1, "rgba(115, 9, 177, 0.2)");
         gradientStroke1.addColorStop(0.2, "rgba(72,72,176,0.0)");
         gradientStroke1.addColorStop(0, "rgba(203,12,159,0)"); //purple colors
-
         var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
         gradientStroke2.addColorStop(1, "rgba(20,23,39,0.2)");
         gradientStroke2.addColorStop(0.2, "rgba(72,72,176,0.0)");
         gradientStroke2.addColorStop(0, "rgba(20,23,39,0)"); //purple colors
-
         new Chart(ctx2, {
             type: "line",
             data: {

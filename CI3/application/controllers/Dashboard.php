@@ -44,6 +44,12 @@ class Dashboard extends CI_Controller
             // Se lucro for negativo ou inválido, defina como 0
             $lucro = $lucro < 0 ? 0 : $lucro;
 
+            // Pegando as vendas por mês para Dashboard
+            $vendasPorMes = $this->Model_contasareceber->getVendasPorMes();
+            // Meses do ano
+            $meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
             // Dados para a view
             $data = [
                 'clientesHoje' => $clientesHoje,
@@ -54,7 +60,9 @@ class Dashboard extends CI_Controller
                 'totalContasAPagar' => $totalContasAPagar,
                 'percentualContasareceberHoje' => $percentualContasareceberHoje,
                 'contasAReceberHoje' => $contasAReceberHoje,
-                'lucro' => $lucro
+                'lucro' => $lucro,
+                'labels' => $meses,
+                'vendas' => array_values($vendasPorMes)
             ];
  
             // Carregar a view e passar os dados

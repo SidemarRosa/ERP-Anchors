@@ -23,7 +23,23 @@ class Model_contasareceber extends CI_Model {
         $query = $this->db->get('contasareceber');
         return $query->row()->valor ?: 0;  // Retorna 0 caso o valor seja NULL
     }
+    // Método para pegar as vendas por mês para o dashboard
+    public function getVendasPorMes() {
+        $this->db->select("MONTH(data_vencimento) AS mes, COUNT(*) AS vendas");
+        $this->db->from('contasareceber');
+      //  $this->db->where('status', 'pago');  // Considerando apenas as contas pagas
+        $this->db->group_by('MONTH(data_vencimento)');
+        $this->db->order_by('MONTH(data_vencimento)');
+        $query = $this->db->get();
 
+        // Processando os resultados
+        $vendasPorMes = array_fill(1, 12, 0);  // Inicializa o array com 0 para cada mês (1 a 12)
+        
+        foreach ($query->result() as $row) {
+            $vendasPorMes[$row->mes] = $row->vendas;  // Preenche as vendas para o mês correspondente
+        }
+        return $vendasPorMes;  // Retorna os dados por mês
+    }
     // Método para pegar o total de contas a receber hoje
     public function getTotalContasAReceberHoje() {
         $this->db->select_sum('valor');
