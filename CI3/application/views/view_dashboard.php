@@ -55,7 +55,7 @@
                     <a class="nav-link active" href="http://localhost/anchors/CI3/index.php/dashboard">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-home text-dark"></i> <!-- Icone do Font Awesome -->
+                            <i class="fas fa-home text-white"></i> <!-- Icone do Font Awesome -->
                         </div>
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
@@ -111,18 +111,7 @@
 
             </ul>
         </div>
-        <div class="sidenav-footer mx-3">
-            <div
-                class="card card-background shadow-none card-background-mask-secondary"
-                id="sidenavCard">
-                <div
-                    class="full-background"
-                    style="
-              background-image: url('../assets/img/curved-images/white-curved.jpeg');
-            "></div>
-            </div>
-
-        </div>
+        
     </aside>
     <!-- Conteudo da pagina -->
     <main
