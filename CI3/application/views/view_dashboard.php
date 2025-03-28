@@ -252,7 +252,7 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Vendas Hoje</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            R$ <?= number_format($totalContasAReceber, 2, ',', '.') ?>
+                                            R$ <?= number_format($contasAReceberHoje, 2, ',', '.') ?>
                                             <span class="text-<?= $percentualContasareceberHoje >= 0 ? 'success' : 'danger' ?> text-sm font-weight-bolder">
                                                 <?= $percentualContasareceberHoje >= 0 ? '+' : '' ?><?= number_format($percentualContasareceberHoje, 2) ?>%
                                             </span>

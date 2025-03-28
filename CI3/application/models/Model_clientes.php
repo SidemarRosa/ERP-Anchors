@@ -7,7 +7,7 @@ class Model_clientes extends CI_Model {
         parent::__construct();
     }
     public function getClientesHoje() {
-        $this->db->where('DATE(data_cadastro)', 'CURDATE()', false);
+        $this->db->where('DATE(data_cadastro)', date('Y-m-d'));
         return $this->db->count_all_results('clientes');
     }
 
@@ -17,7 +17,9 @@ class Model_clientes extends CI_Model {
     }
 
     public function calcularPercentual($hoje, $ontem) {
-        if ($ontem == 0) return 100; // Evitar divisão por zero
+        if ($ontem == 0) {
+            return $hoje > 0 ? 100 : 0; // Evitar divisão por zero e considerar casos de hoje > 0
+        }
         return (($hoje - $ontem) / $ontem) * 100;
     }
 }
