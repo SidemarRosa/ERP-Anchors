@@ -44,8 +44,8 @@
                     <div class="collapse" id="submenuTabelas">
                         <ul class="nav flex-column ms-5">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/tabelas">
-                                 Tabelas
+                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/empresas">
+                                 Empresas
                                 </a>
                             </li>
                             <li class="nav-item">
