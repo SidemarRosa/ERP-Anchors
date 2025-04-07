@@ -1,172 +1,101 @@
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Empresas</h6>
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>Prospecção</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="p-4">
+            <h2 class="mb-4">Consultar Empresa por CNPJ</h2>
+            <div class="input-group mb-3">
+              <input type="text" id="cnpj" class="form-control" placeholder="Digite o CNPJ">
+              <button class="btn btn-success" id="btnConsultar">Consultar</button>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th colspan="6" class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Informações das Empresas</th>
+                  </tr>
+                  <tr>
+                    <th class="text-secondary text-xs">Identificação</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php foreach ($empresas as $empresa): ?>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Empresa</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CNPJ</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Criação</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Tech Solutions</h6>
-                            <p class="text-xs text-secondary mb-0">contact@techsolutions.com</p>
+                      <td colspan="6">
+                        <div class="p-3 border-bottom">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <strong>Nome Fantasia:</strong> <?= $empresa->nome_fantasia ?><br>
+                              <strong>Razão Social:</strong> <?= $empresa->nome ?> <br>
+                              <strong>CNPJ:</strong> <?= $empresa->cnpj ?><br>
+                              <strong>Status:</strong>
+                              <span class="badge bg-gradient-<?= ($empresa->situacao == 'ATIVA') ? 'success' : 'secondary' ?>">
+                                <?= ucfirst(strtolower($empresa->situacao)) ?>
+                              </span>
+                            </div>
+                            <div class="col-md-6">
+                              <strong>Telefone:</strong> <?= $empresa->telefone ?><br>
+                              <strong>Email:</strong> <?= $empresa->email ?><br>
+                              <strong>Abertura:</strong> <?= date('d/m/Y', strtotime($empresa->abertura)) ?><br>
+                              <strong>Tipo:</strong> <?= ucfirst(strtolower($empresa->tipo)) ?>
+                            </div>
+                            <div class="col-md-6">
+                              <strong>Porte:</strong> <?= $empresa->porte ?><br>
+                              <strong>Natureza Jurídica:</strong> <?= $empresa->natureza_juridica ?><br>
+                              <strong>Capital Social:</strong> R$ <?= number_format($empresa->capital_social, 2, ',', '.') ?><br>
+                              <?php if (!empty($empresa->telefone)): ?>
+                                <?php
+                                $whatsapp = 'https://wa.me/' . preg_replace('/\D/', '', $empresa->telefone);
+                                ?>
+                                <a href="<?= $whatsapp ?>" class="btn btn-success btn-sm mt-2" target="_blank">
+                                  <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                              <?php endif; ?>
+                            </div>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">12.345.678/0001-99</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">contact@techsolutions.com</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Ativa</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">01/02/2010</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <a href="https://wa.me/123456789" class="btn btn-success" target="_blank">
-                          <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                      </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Web Innovators</h6>
-                            <p class="text-xs text-secondary mb-0">support@webinnovators.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">23.456.789/0001-88</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">support@webinnovators.com</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Inativa</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">15/08/2015</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="https://wa.me/987654321" class="btn btn-success btn-sm" target="_blank">
-                          Contato no WhatsApp
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Global Industries</h6>
-                            <p class="text-xs text-secondary mb-0">info@globalindustries.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">34.567.890/0001-22</p>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">info@globalindustries.com</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-warning">Pendente</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">12/05/2018</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="https://wa.me/1122334455" class="btn btn-success btn-sm" target="_blank">
-                          Contato no WhatsApp
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+              <div class="mt-3 ms-3">
+                <?= $pagination ?>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Contatos</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-3">
-                <table class="table table-hover align-items-center text-nowrap">
-                  <thead class="thead-light">
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome fantasia</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">CNPJ</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Data de Contato</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Próximo Contato</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Responsável</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Data de Criação</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    $conn = new mysqli("localhost", "root", "", "anchors");
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          $('#btnConsultar').on('click', function() {
+            const cnpj = $('#cnpj').val().replace(/\D/g, '');
 
-                    if ($conn->connect_error) {
-                      die("Conexão falhou: " . $conn->connect_error);
-                    }
+            if (!cnpj) {
+              alert('Digite um CNPJ válido.');
+              return;
+            }
 
-                    $sql = "SELECT nome_fantasia, cnpj, data_contato, proximo_contato, responsavel, status, criado_em FROM contatos";
-                    $result = $conn->query($sql);
+            $.getJSON(`http://localhost/anchors/CI3/index.php/empresas/consultar/${cnpj}`, function(data) {
+              if (data.erro) {
+                alert(data.erro);
+              } else {
+                alert('Empresa consultada e salva com sucesso!');
+                location.reload();
+              }
+            }).fail(function() {
+              alert('Erro ao consultar o CNPJ. Tente novamente.');
+            });
+          });
+        });
+      </script>
 
-                    if ($result->num_rows > 0) {
-                      while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                  <td class='px-3'>" . $row["nome_fantasia"] . "</td>
-                  <td class='px-3'>" . $row["cnpj"] . "</td>
-                  <td class='text-center px-3'>" . $row["data_contato"] . "</td>
-                  <td class='text-center px-3'>" . $row["proximo_contato"] . "</td>
-                  <td class='px-3'>" . $row["responsavel"] . "</td>
-                  <td class='text-center px-3'>
-                    <span class='badge badge-sm bg-gradient-" . ($row["status"] == 'Pendente' ? "warning" : "success") . "'>" . $row["status"] . "</span>
-                  </td>
-                  <td class='text-center px-3'>
-                    <span class='text-secondary text-xs font-weight-bold'>" . $row["criado_em"] . "</span>
-                  </td>
-                </tr>";
-                      }
-                    } else {
-                      echo "<tr><td colspan='7' class='text-center'>Nenhum contato encontrado</td></tr>";
-                    }
+    </div>
 
-                    $conn->close();
-                    ?>
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-</html>
+    </html>

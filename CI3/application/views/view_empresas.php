@@ -18,7 +18,6 @@
 
   <div id="resultado" class="mt-4"></div>
 </div>
-
 <script>
   $('#btnConsultar').on('click', function () {
     const cnpj = $('#cnpj').val().replace(/\D/g, '');
