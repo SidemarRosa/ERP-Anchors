@@ -111,7 +111,7 @@
 
             </ul>
         </div>
-        
+
     </aside>
     <!-- Conteudo da pagina -->
     <main
@@ -150,12 +150,7 @@
                     class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
                     id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Procure..." />
+                        <div class="text-body" id="horaDataAtual" style="font-weight: 500;">
                         </div>
                     </div>
                 </div>
@@ -332,10 +327,10 @@
                     <!-- Card de Usuários Ativos -->
                     <div class="card z-index-2">
                         <div class="card-body p-3">
-                            <h6 class="ms-2 mt-4 mb-0">Usuários ativos</h6>
-                            <p class="text-sm ms-2">
+                            <h6 class="ms-2 mt-4 mb-0">Indicadores:</h6>
+                            <!-- <p class="text-sm ms-2">
                                 (<span class="font-weight-bolder">+100%</span>) comparado a semana passada
-                            </p>
+                            </p> -->
                             <div class="container border-radius-lg">
                                 <div class="row">
                                     <!-- Usuários -->
@@ -357,7 +352,7 @@
                                             <div class="icon icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
                                                 <i class="fas fa-rocket text-white"></i>
                                             </div>
-                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
+                                            <p class="text-xs mt-1 mb-0 font-weight-bold">Estoque</p>
                                         </div>
                                         <h4 class="font-weight-bolder">264</h4>
                                         <div class="progress w-75">
@@ -769,17 +764,7 @@
         new Chart(ctx2, {
             type: "line",
             data: {
-                labels: [
-                    "Apr",
-                    "Mai",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Set",
-                    "Oct",
-                    "Nov",
-                    "Dez",
-                ],
+                labels: labels,
                 datasets: [{
                         label: "Sites",
                         tension: 0.4,
@@ -871,6 +856,28 @@
             };
             Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
         }
+    </script>
+    <script>
+        function atualizarHoraData() {
+            const agora = new Date();
+            const horas = agora.getHours();
+
+            const dataFormatada = agora.toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+
+            const horaFormatada = agora.toLocaleTimeString('pt-BR');
+
+            // Verifica se está entre 6h e 18h
+            const icone = (horas >= 6 && horas < 18) ? '☀️' : '🌙';
+
+            document.getElementById('horaDataAtual').textContent = `${icone} ${horaFormatada} - ${dataFormatada}`;
+        }
+
+        setInterval(atualizarHoraData, 1000);
+        atualizarHoraData();
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
