@@ -73,12 +73,12 @@
                         <ul class="nav flex-column ms-5">
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/anchors/CI3/index.php/tabelas">
-                                 Tabelas
+                                    Tabelas
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/anchors/CI3/index.php/prospect">
-                                 Prospect
+                                    Prospect
                                 </a>
                             </li>
                             <!-- Adicione mais subitens aqui se quiser -->
@@ -665,31 +665,32 @@
             </div>
         </div>
         </div>
-        <!-- Footer -->
-        <footer class="footer pt-3">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div
-                            class="copyright text-center text-sm text-muted text-lg-end">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            , Feito com carinho <i class="fa fa-heart"></i> por
-                            <a
-                                href="https://anchorstec.com.br"
-                                class="font-weight-bold"
-                                target="_blank">Anchorstec</a>
-                            para o futuro!
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </footer>
         </div>
     </main>
+    <!-- Footer -->
+    <footer class="footer pt-3">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                    <div
+                        class="copyright text-center text-sm text-muted text-lg-end">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        , Feito com carinho <i class="fa fa-heart"></i> por
+                        <a
+                            href="https://anchorstec.com.br"
+                            class="font-weight-bold"
+                            target="_blank">Anchorstec</a>
+                        para o futuro!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <!--   Scripts abaixo   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
