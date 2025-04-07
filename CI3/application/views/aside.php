@@ -45,12 +45,12 @@
                         <ul class="nav flex-column ms-5">
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/anchors/CI3/index.php/empresas">
-                                 Empresas
+                                    Empresas
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/anchors/CI3/index.php/prospect">
-                                 Prospect
+                                    Prospect
                                 </a>
                             </li>
                             <!-- Adicione mais subitens aqui se quiser -->
@@ -58,17 +58,35 @@
                     </div>
                 </li>
 
-                <!-- Icone Financeiro -->
+                <!-- Ícone Fiannceiro com "dropdown" usando collapse -->
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/anchors/CI3/index.php/financeiro">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-credit-card text-dark"></i> <!-- Icone do Font Awesome -->
+                    <a class="nav-link" data-bs-toggle="collapse" href="#submenuFinanceiro" role="button" aria-expanded="false" aria-controls="submenuFinanceiro">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-table text-dark"></i>
                         </div>
                         <span class="nav-link-text ms-1">Financeiro</span>
                     </a>
+                    <div class="collapse" id="submenuFinanceiro">
+                        <ul class="nav flex-column ms-5">
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/financeiro">
+                                    Financeiro
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/contasapagar">
+                                    Contas a Pagar
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/contasareceber">
+                                    Contas a Receber
+                                </a>
+                            </li>
+                            <!-- Adicione mais subitens aqui se quiser -->
+                        </ul>
+                    </div>
                 </li>
-
                 <!-- Icone perfil -->
                 <li class="nav-item mt-3">
                     <h6
