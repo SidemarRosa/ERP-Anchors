@@ -50,7 +50,7 @@
                               <strong>Capital Social:</strong> R$ <?= number_format($empresa->capital_social, 2, ',', '.') ?><br>
                               <?php if (!empty($empresa->telefone)): ?>
                                 <?php
-                                $whatsapp = 'https://wa.me/' . preg_replace('/\D/', '', $empresa->telefone);
+                                $whatsapp = 'https://wa.me/' . preg_replace('/\D/', '', $empresa->telefone) . '?text=Olá, tudo bem?';
                                 ?>
                                 <a href="<?= $whatsapp ?>" class="btn btn-success btn-sm mt-2" target="_blank">
                                   <i class="fab fa-whatsapp"></i> WhatsApp
