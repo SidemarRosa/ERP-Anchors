@@ -34,7 +34,7 @@ class Python extends CI_Controller
             $data['empresas'] = [];
 
             // Só busca se algum filtro foi enviado
-            if (!empty($filtros['cnpj']) || !empty($filtros['uf']) || !empty($filtros['municipio']) || !empty($filtros['nome_fantasia'])) {
+            if (!empty($filtros['cnpj']) || !empty($filtros['uf']) || !empty($filtros['cnae_fiscal']) || !empty($filtros['nome_fantasia'])) {
                 $data['empresas'] = $this->Model_python->filtrar($filtros);
             }
 
