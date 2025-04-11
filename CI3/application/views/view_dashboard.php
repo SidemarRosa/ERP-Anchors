@@ -81,6 +81,11 @@
                                     Prospect
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/anchors/CI3/index.php/python">
+                                    Api dados python
+                                </a>
+                            </li>
                             <!-- Adicione mais subitens aqui se quiser -->
                         </ul>
                     </div>

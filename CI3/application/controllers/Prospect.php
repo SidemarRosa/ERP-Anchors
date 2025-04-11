@@ -22,7 +22,7 @@ class Prospect extends CI_Controller
         } else {
             $config['base_url'] = 'http://localhost/anchors/CI3/index.php/Prospect/index';
             $config['total_rows'] = $this->Model_empresas->contar_empresas();
-            $config['per_page'] = 20;
+            $config['per_page'] = 5;
             $config['uri_segment'] = 3;
             $config['full_tag_open'] = '<nav><ul class="pagination">';
             $config['full_tag_close'] = '</ul></nav>';
